@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Student Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="header">
+    <div class="header-center">
+      <a class="logo" href="#">Student Details</a>
+    </div>
+    <div class="header-right">
+    <a href = "{{ url_for('home') }}">Home</a>
+    </div>
+</div>
+<h1>Edit Student Details</h1>
+</br>
+<form method="post" action="/edit/{{name.0}}">
+    <p>
+    <input name="id" value="{{ name.0 }}" type="text" placeholder="id" autocomplete="off" required>
+    </p>
+    <p>
+    <input name="name" value="{{ name.1 }}"
+                     type="text" placeholder="Name" autocomplete="off" required>
+    </p>
+    <p>
+    <input name="emailid" value="{{ name.2 }}"  type="text" placeholder="Email" autocomplete="off" required>
+    </p>
+    <p>
+    <input name="mobile" value="{{ name.3 }}"
+                  type="text" placeholder="mobile" autocomplete="off" required>
+    </p>
+    <p>
+        <button  name = "submit" class="btn btn-primary stretched-link" role="button" aria-pressed="true">Submit</button>
+    </p>
+</form>
+<footer>
+  <p>Project by: Mayuri Mhetre<br>
+  <a href="https://github.com/mayurimhetre/CRUD-python-Flask-Mysql">Source Code</a></p>
+</footer>
+</body>
+<style>
+        body {
+           background-image: url(http://www.joburgchiropractor.co.za/images/background.jpg);
+           text-align: center;
+        }
+          form {
+            display: inline-block;
+              }
+</style>
+</html>

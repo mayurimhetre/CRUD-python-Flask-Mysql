@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<div class="header">
+    <div class="header-center">
+      <a class="logo" href="#">Student Details</a>
+    </div>
+    <div class="header-right">
+    <a href = "{{ url_for('home') }}">Home</a>
+    </div>
+</div>
+<h1>Add Student Details</h1>
+</br>
+<form method="post" action="/add">
+    <p><input name="id" type="text" placeholder="Enter Student Roll Number" autocomplete="off" required>
+    </p>
+    <p><input name="name" type="text" placeholder="Student Name" autocomplete="off" required>
+    </p>
+    <p><input name="emailid" type="text" placeholder="Student Email ID" autocomplete="off" required>
+    </p>
+    <p><input name="mobile" type="text" placeholder="Student mobile number" autocomplete="off" required>
+    </p>
+    <p>
+      <button name = "submit" class="btn btn-primary stretched-link" role="button" aria-pressed="true">Submit</button>
+    </p>
+</form>
+<footer>
+  <p>Project by: Mayuri Mhetre<br>
+  <a href="https://github.com/mayurimhetre/CRUD-python-Flask-Mysql">Source Code</a></p>
+</footer>
+
+    <style>
+        body {
+           background-image: url(http://www.joburgchiropractor.co.za/images/background.jpg);
+           text-align: center;
+              }
+        form {
+            display: inline-block;
+              }
+
+    </style>
+</body>
+</html>

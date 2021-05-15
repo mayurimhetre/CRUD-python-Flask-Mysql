@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fetched data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<div class="header">
+    <div class="header-center">
+      <a class="logo" href="#">Student Details</a>
+    </div>
+   <!-- <p>Developed a web application using python, Flask,mysql server for performing CRUD operations</p> -->
+  <div class="header-right">
+
+    <a href = "{{ url_for('add') }}">Add New Student Details</a>
+
+  </div>
+
+</div>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Roll Number</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email Id</th>
+      <th scope="col">Mobile number</th>
+      <th scope="col">Update Details</th>
+      <th scope="col">Delete Details</th>
+    </tr>
+  </thead>
+    {% for i in name %}
+  <tbody>
+    <tr>
+      <th scope="row">{{ i.0 }}</th>
+      <td>{{ i.1 }}</td>
+      <td>{{ i.2 }}</td>
+      <td>{{ i.3 }}</td>
+      <td><a id = "link3" href = "{{ url_for('edit' ,value = i.0) }}" class="btn btn-primary stretched-link" role="button" aria-pressed="true">Edit</a></td>
+      <td><a id = "link3" href = "{{ url_for('delete' ,value = i.0) }}" class="btn btn-primary stretched-link" role="button" aria-pressed="true">Delete</a></td>
+    </tr>
+  </tbody>
+    {% endfor %}
+</table>
+<footer>
+  <p>Project by: Mayuri Mhetre<br>
+  <a href="https://github.com/mayurimhetre/CRUD-python-Flask-Mysql">Source Code</a></p>
+</footer>
+</body>
+
+<style>
+        body {
+           background-image: url(http://www.joburgchiropractor.co.za/images/background.jpg);
+        }
+</style>
+</html>
