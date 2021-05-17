@@ -22,18 +22,18 @@
 </br>
 <form method="post" action="/edit/{{name.0}}">
     <p>
-    <input name="id" value="{{ name.0 }}" type="text" placeholder="id" autocomplete="off" required>
+    <input name="id" value="{{ name.0 }}" type="text" placeholder="id" autocomplete="off" required disabled>
     </p>
     <p>
     <input name="name" value="{{ name.1 }}"
                      type="text" placeholder="Name" autocomplete="off" required>
     </p>
     <p>
-    <input name="emailid" value="{{ name.2 }}"  type="text" placeholder="Email" autocomplete="off" required>
+    <input name="emailid" value="{{ name.2 }}"  type="email" placeholder="Email" autocomplete="off" required>
     </p>
     <p>
     <input name="mobile" value="{{ name.3 }}"
-                  type="text" placeholder="mobile" autocomplete="off" required>
+                  type="text" placeholder="mobile" autocomplete="off" maxlength="10" pattern="\d{10}" title="Please enter exactly 10 digits"   pattern="[1-9]{1}[0-9]{9}" required>
     </p>
     <p>
         <button  name = "submit" class="btn btn-primary stretched-link" role="button" aria-pressed="true">Submit</button>

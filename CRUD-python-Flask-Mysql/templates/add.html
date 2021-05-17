@@ -24,9 +24,9 @@
     </p>
     <p><input name="name" type="text" placeholder="Student Name" autocomplete="off" required>
     </p>
-    <p><input name="emailid" type="text" placeholder="Student Email ID" autocomplete="off" required>
+    <p><input name="emailid" type="email" placeholder="Student Email ID" autocomplete="off" required>
     </p>
-    <p><input name="mobile" type="text" placeholder="Student mobile number" autocomplete="off" required>
+    <p><input name="mobile" type="text" placeholder="Student mobile number" autocomplete="off"  maxlength="10" pattern="\d{10}" title="Please enter exactly 10 digits"   pattern="[1-9]{1}[0-9]{9}" required>
     </p>
     <p>
       <button name = "submit" class="btn btn-primary stretched-link" role="button" aria-pressed="true">Submit</button>
